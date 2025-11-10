@@ -3,6 +3,10 @@ MDF (Modular Development Framework) Just in time (Estoque Mínimo) é uma ferram
 
 ## Sistem Web Full Stack
 
+### MER x DER
+## Conceitual
+## Lógico
+
 ## Lista de requisitos de infraestrutura
 - Ambiente de desenvolvimento:
   - Node.js (versão 14 ou superior, JavaScript)
@@ -16,4 +20,4 @@ MDF (Modular Development Framework) Just in time (Estoque Mínimo) é uma ferram
 ## Distribuição de pastas
 ```
 ```
-# mdfjustintime2025
+
