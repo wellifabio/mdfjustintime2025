@@ -4,6 +4,7 @@ MDF (Modular Development Framework) Just in time (Estoque Mínimo) é uma ferram
 ## Sistem Web Full Stack
 
 ### MER x DER
+![MER x DER](./docs/der.png)
 ## Conceitual
 ## Lógico
 
