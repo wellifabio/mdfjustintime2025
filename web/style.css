@@ -19,15 +19,16 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 header {
     font-size: 2rem;
     margin-bottom: 1rem;
     width: 100vw;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,22 +44,24 @@ header {
 h1 {
     color: var(--p4);
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 2.5rem;
     height: 10vh;
 }
 
 main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     height: 90vh;
+    width: 100%;
+    max-width: 1200px;
+    overflow-y: auto;
 }
 
 nav {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -118,6 +121,78 @@ button {
     }
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px var(--t1);
+
+    th,
+    td {
+        text-align: left;
+        text-align: center;
+    }
+
+    th {
+        background-color: var(--p2);
+        color: var(--p1);
+    }
+
+    tr {
+        border-bottom: 1px solid var(--t1);
+
+        td {
+            background-color: var(--p1);
+
+            img {
+                width: 100px;
+                height: auto;
+            }
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--p4);
+
+        td {
+            background-color: var(--p4);
+            color: var(--p1);
+        }
+    }
+}
+
+.estoque-baixo {
+    td {
+        background-color: #ff0000;
+        color: var(--p1);
+        font-weight: bold;
+    }
+}
+
+.estoque-baixo:nth-child(even) {
+    td {
+        background-color: #FF0000;
+    }
+}
+
+#esquerda {
+    max-height: 60vh;
+    overflow-y: auto;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+
+        input {
+            padding: 0.5rem;
+            border: 1px solid var(--p4);
+            border-radius: 4px;
+        }
+    }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;
@@ -125,10 +200,67 @@ button {
 
     header {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        gap: 0px;
+
+        h1 {
+            padding: 0px;
+            margin: 0px;
+            font-size: 1.5rem;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding: 0px;
+        }
     }
+
+    main {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+
 
     form {
         width: 100%;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        width: 100%;
+        word-break: break-word;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 0.5rem auto;
+        }
+    }
+
+    #esquerda {
+        max-height: none;
+        overflow: visible;
+
+        div {
+            flex-direction: column;
+            align-items: stretch;
+        }
     }
 }

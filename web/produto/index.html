@@ -15,6 +15,52 @@
             <button onclick="window.history.back()">Voltar</button>
         </nav>
     </header>
+    <main>
+        <section id="direita">
+            <h2>Cadastro de Produtos</h2>
+            <form>
+                <label for="nome">Nome do Produto:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                <label for="estoque">Quantidade em Estoque:</label>
+                <input type="number" id="estoque" name="estoque" placeholder="0" required>
+                <label for="estoqueMinimo">Estoque Mínimo:</label>
+                <input type="number" id="estoqueMinimo" name="estoqueMinimo" placeholder="0" required>
+                <label for="custo">Custo R$:</label>
+                <input type="number" id="custo" name="custo" step="0.01" placeholder="0.00" required>
+                <label for="imagem">URL da Imagem:</label>
+                <input type="text" id="imagem" name="imagem" placeholder="http://exemplo.com/imagem.jpg">
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </section>
+        <section id="esquerda">
+            <div>
+                <h2>Lista de Produtos</h2>
+                <div>
+                    <label for="filtro">Buscar produtos</label>
+                    <input type="text" id="filtro" name="filtro" placeholder="Digite para buscar..." oninput="filtrarProdutos()">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Quantidade em Estoque</th>
+                        <th>Estoque Mínimo</th>
+                        <th>Custo R$</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produtos serão listados aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 

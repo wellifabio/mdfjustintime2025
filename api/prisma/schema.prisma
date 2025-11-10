@@ -33,7 +33,7 @@ model Producao {
   tipo       TipoMovimento
   quantidade Int
   data       DateTime @default(now())
-  produto produto @relation(fields: [produtoId], references: [id])
+  produto produto @relation(fields: [produtoId], references: [id], onDelete: Cascade)
   usuario Usuario @relation(fields: [usuarioId], references: [id])
 }
 
