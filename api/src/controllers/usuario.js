@@ -36,7 +36,7 @@ const login = async (req, res) => {
             delete usuario.senha;
             res.json(usuario);
         } else {
-            res.status(401).json({ error: "Email or senha inválidos" });
+            res.status(401).json({ error: "Email ou senha inválidos" });
         }
     } catch (e) {
         res.status(400).json({ error: e.message });
