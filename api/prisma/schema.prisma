@@ -12,8 +12,6 @@ model Usuario {
   nome      String
   email     String   @unique
   senha     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   producoes  Producao[]
 }
 
@@ -25,8 +23,6 @@ model produto {
   estoque       Int
   estoqueMinimo Int
   imagem     String?
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
   producoes      Producao[]
 }
 
@@ -37,7 +33,6 @@ model Producao {
   tipo       TipoMovimento
   quantidade Int
   data       DateTime @default(now())
-  updatedAt  DateTime @updatedAt
   produto produto @relation(fields: [produtoId], references: [id])
   usuario Usuario @relation(fields: [usuarioId], references: [id])
 }

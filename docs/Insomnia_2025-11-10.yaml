@@ -1,0 +1,366 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1740747688230
+  modified: 1740747688230
+  description: ""
+collection:
+  - name: dummyjson.com
+    meta:
+      id: fld_de24bd1eb6fe45ca8888f9a5522e0071
+      created: 1753097349572
+      modified: 1753097349572
+      sortKey: -1753097349572
+      description: ""
+  - name: MDF-Producao
+    meta:
+      id: fld_1b61d812a5784a2990b0a62269fb5713
+      created: 1762792458527
+      modified: 1762792458527
+      sortKey: -1762792458527
+      description: ""
+    children:
+      - url: http://localhost:3000
+        name: TESTE
+        meta:
+          id: req_851071337da44d6dbc9921bc9ca57943
+          created: 1762792464000
+          modified: 1762793108022
+          isPrivate: false
+          description: ""
+          sortKey: -1762792464000
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - name: usuario
+        meta:
+          id: fld_e57298503f4e42258436615f3e289d47
+          created: 1762792488000
+          modified: 1762792491228
+          sortKey: -1762792463900
+          description: ""
+        children:
+          - url: http://localhost:3000/usuarios
+            name: READ
+            meta:
+              id: req_2b312602ab37466d8dbd998aa18570e2
+              created: 1762792494804
+              modified: 1762793936276
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494804
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios
+            name: CREATE
+            meta:
+              id: req_1d3b37f4dd614a67bec1f85206121f12
+              created: 1762794168369
+              modified: 1762794236508
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494904
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"nome": "Carla Silva",
+                		"email": "carla@email.com",
+                		"senha":"senha123"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/login
+            name: LOGIN
+            meta:
+              id: req_ee051d843d6d4a0f8934dbbf86c3d924
+              created: 1762794232993
+              modified: 1762794672322
+              isPrivate: false
+              description: ""
+              sortKey: -1762792489028.25
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"email": "carla@email.com",
+                		"senha":"senha123"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios/4
+            name: DELETE
+            meta:
+              id: req_443a2c7349814777b3635c8ab892ff59
+              created: 1762794647366
+              modified: 1762796350176
+              isPrivate: false
+              description: ""
+              sortKey: -1762792483252.5
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: produto
+        meta:
+          id: fld_e6cbd0a2419d4c6aa013ff835bbccb72
+          created: 1762795546728
+          modified: 1762795546728
+          sortKey: -1762792461213.5
+          description: ""
+        children:
+          - url: http://localhost:3000/produtos
+            name: READ
+            meta:
+              id: req_a4540440bdab49d0aea9bcf23136104e
+              created: 1762795546730
+              modified: 1762795553564
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494804
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos
+            name: CREATE
+            meta:
+              id: req_1f747745c31b4b09ad3aba584ac13fc2
+              created: 1762795546732
+              modified: 1762795643894
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494904
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"nome": "Caixa MDF 16x16x6",
+                		"descricao": "Kit 10 Caixinha Mdf Cru 16x16x6",
+                		"custo": 30,
+                		"estoque": 50,
+                		"estoqueMinimo": 10
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/4
+            name: DELETE
+            meta:
+              id: req_9d48d394a2e9497da8a2154f1cff84a4
+              created: 1762795546737
+              modified: 1762795898449
+              isPrivate: false
+              description: ""
+              sortKey: -1762792483252.5
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/4
+            name: UPDATE
+            meta:
+              id: req_2dc73efcf6324f57b1d31468c6e47ff7
+              created: 1762795667736
+              modified: 1762795791201
+              isPrivate: false
+              description: ""
+              sortKey: -1762792489028.25
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"nome": "Caixa MDF 10x10x4",
+                		"descricao": "Kit 10 Caixinha Mdf Cru 10x10x64",
+                		"estoque": 0
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: producao
+        meta:
+          id: fld_f162476f51c24eb7a285e2a97277a3ed
+          created: 1762795923288
+          modified: 1762795923288
+          sortKey: -1762792459870.25
+          description: ""
+        children:
+          - url: http://localhost:3000/producoes
+            name: READ
+            meta:
+              id: req_a01f76386a1e4c999f23c17b88a1e910
+              created: 1762795923290
+              modified: 1762795934186
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494804
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/producoes
+            name: CREATE
+            meta:
+              id: req_8cd98afd38094f099c2c28f2d0e4a15e
+              created: 1762795923292
+              modified: 1762796461620
+              isPrivate: false
+              description: ""
+              sortKey: -1762792494904
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"usuarioId":1,
+                		"produtoId":1,
+                		"tipo": "PRODUCAO",
+                		"quantidade": 10
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1740747698883
+    modified: 1753445624242
+  cookies:
+    - key: accessToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTM0NDU2MjQsImV4cCI6MTc1MzQ0NTY4NH0.oX8vDJSX8XmZTpP5_gA0_uFU50iv_r3bgSgGdFMAba8
+      maxAge: 60
+      domain: dummyjson.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-07-21T11:32:13.611Z
+      lastAccessed: 2025-07-25T12:13:44.242Z
+      id: 9b286ebf-5f4a-4778-a956-e2c9222a23aa
+    - key: refreshToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTM0NDU2MjQsImV4cCI6MTc1NjAzNzYyNH0.9ufk7JL3DoW76fgrbE0jN-R43peNFhctTEpBt33kf3U
+      maxAge: 60
+      domain: dummyjson.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-07-21T11:32:13.613Z
+      lastAccessed: 2025-07-25T12:13:44.242Z
+      id: 9f8a406d-bee2-4b7a-ad9a-25494370667f
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1740747698766
+    modified: 1740747698766
+    isPrivate: false
