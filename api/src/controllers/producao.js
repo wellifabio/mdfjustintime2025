@@ -26,7 +26,7 @@ const create = async (req, res) => {
                 res.status(201).json(producao);
             } else {
                 if (produto.estoque < req.body.quantidade) {
-                    return res.status(400).json({ error: "Quantidade insuficiente em estoque para saída" });
+                    return res.status(400).json({ error: "Quantidade insuficiente em estoque" });
                 } else {
                     produto.estoque -= req.body.quantidade;
                     await prisma.produto.update({

@@ -10,7 +10,7 @@
     --p2: #6610f2;
     --p3: #6f42c1;
     --p4: #1c352d;
-    --t1: rgba(0, 0, 0, 0.5);
+    --t1: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -147,15 +147,22 @@ table {
                 width: 100px;
                 height: auto;
             }
+
+            input {
+                padding: 0.5rem;
+                border: none;
+                border: solid 1px var(--p4);
+                border-radius: 4px;
+            }
         }
     }
 
     tr:nth-child(even) {
-        background-color: var(--p4);
+        background-color: var(--p1);
 
         td {
-            background-color: var(--p4);
-            color: var(--p1);
+            background-color: var(--t1);
+            color: var(--p4);
         }
     }
 }

@@ -5,9 +5,35 @@ if (!usuario) {
     window.location.href = "../login";
 }
 
-const tbody = document.querySelector("tbody");
+async function producoes(produtoId, data, quantidade, tipo) {
+    if (!data || quantidade <= 0) {
+        alert("Por favor, insira uma data de produção válida e uma quantidade maior que zero.");
+        return;
+    }
+    const dados = {
+        produtoId: Number(produtoId),
+        usuarioId: Number(usuario.id),
+        quantidade: Number(quantidade),
+        tipo: tipo,
+        data: new Date(data).toISOString()
+    };
+    const response = await fetch(`${api}/producoes`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    if (response.ok) {
+        carregarEOrdenarProdutos();
+    } else {
+        const errorData = await response.json();
+        alert(errorData.error);
+    }
+}
 
 const carregarEOrdenarProdutos = async () => {
+    const tbody = document.querySelector("tbody");
     try {
         const response = await fetch(`${api}/produtos`);
         const produtos = await response.json();
@@ -24,10 +50,10 @@ const carregarEOrdenarProdutos = async () => {
                 <td>${produto.nome}</td>
                 <td>${produto.estoque}</td>
                 <td>${produto.estoqueMinimo}</td>
-                <td><button>Produzir</button></td>
-                <td><input type="date" value="${new Date().toISOString().split('T')[0]}" id="data"></td>
-                <td><input type="number" value="0" id="quantidade"></td>
-                <td><button>Pedido</button></td>
+                <td><button onclick="producoes(${produto.id}, document.getElementById('data${produto.id}').value, document.getElementById('quantidade${produto.id}').value, 'PRODUCAO')">Produzir</button></td>
+                <td><input type="date" value="${new Date().toISOString().split('T')[0]}" id="data${produto.id}"></td>
+                <td><input type="number" value="0" id="quantidade${produto.id}"></td>
+                <td><button onclick="producoes(${produto.id}, document.getElementById('data${produto.id}').value, document.getElementById('quantidade${produto.id}').value, 'PEDIDO')">Pedido</button></td>
             `;
             tbody.appendChild(tr);
         });
